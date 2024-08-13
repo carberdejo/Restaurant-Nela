@@ -1,0 +1,283 @@
+:root {
+    --blanco: #fff;
+    --naranja: #df6839;
+    --cafe: #823707;
+    --celeste: #00b8fe;
+    --negro: #000000;
+    --verede: #105414;
+    --turquesa: #00f6ff;
+    --rojo: #ff0f0f;
+    --gris: #7a7672;
+    --amarillo: #EBBF63;
+    --marron1: #963C08;
+    --marron2:#5C1302;
+    --texto: 'Poppins';
+
+}
+
+html {
+    box-sizing: border-box;
+    /*1rem = 16px*/
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+/*globales*/
+
+.contenedor{
+    max-width: 125rem;
+    margin: 0 auto;
+    width: 95%;
+    
+}
+
+h1, h2,h3, p, a {
+    font-family: var(--texto);
+}
+
+img {
+    max-width: 100%;
+}
+
+.btn {
+    text-decoration: none;
+    color: var(--blanco);
+    font-size: 2rem;
+    text-transform: capitalize;
+    padding: 1rem 3rem;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+}
+
+/*encabezsado*/
+.menu{
+    height: 130px;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    background-color: var(--cafe);
+    align-items: center;
+  }
+  .k3{
+    margin-left: 15px;
+    color: #fff;
+    font-size: 50px;
+  }
+  .logo{
+    height: 80% ;
+    width: auto;
+  }
+  .logo img{
+    height: 100%  ;
+    width: auto;
+  }
+  .login{
+    width: 70px;
+    background-color: transparent;
+    height: 50px;
+    color: #fff;
+    text-align: center;
+    padding: 4px;
+    margin-right: 10px;
+  }
+  .persona{
+    font-size: 40px;
+  }
+  .navegacion a{
+    color: var(--blanco);
+    text-decoration: none;
+      font-size: 2rem;
+      padding: 1rem;
+      padding-left: 4rem;
+      transition: color .3s ease-in-out;
+      text-align: center;
+  }
+  .navegacion a:nth-child(even):hover {
+    color: var(--rojo);
+  }
+  
+  .navegacion a:nth-child(odd):hover {
+    color: var(--rojo);
+  }
+  
+
+.centro{
+    background-image: url(https://imagenes.elpais.com/resizer/v2/https%3A%2F%2Fcloudfront-eu-central-1.images.arcpublishing.com%2Fprisa%2FXVID7HH5K5CRZAG7XJXY226JE4.jpg?auth=7080062efca8470ef0352492c3f5fddfed47738ad6b07b4cdead6613ddcddcaf&width=1200&height=675&smart=true);
+    width: 100%;
+    height: 800px;
+    background-size: cover;
+    background-position: top;
+}
+.fondo{
+    background-color: #00000073;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    
+}
+.fondo p{
+    color: white;
+    font-size: 100px;
+    font-weight: 900;
+    margin: 0;
+    padding-top: 250px;
+
+}
+.sectioncentro{
+    display: flex;
+    width: 95%;
+    margin: auto;
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.section1{
+    width: 60%;
+    position: relative;
+    height: 700px;
+    
+}
+.section2{
+    width: 40%;
+}
+.boximg{
+    width: 260px;
+    height: 600px;
+    object-fit: cover;
+    object-position: center;
+    margin: 10px;
+    position: absolute;
+}
+.boximg1{
+   left: 0;
+   top: 0;
+}
+.boximg2{
+    left: 300px;
+    top: 40px;
+}
+.boximg3{
+    right: 20px;
+    bottom: 0;
+}
+.section2 h4{
+    margin-top: 140px;
+    font-size: 50px;
+    text-align: left;
+    color: #5c1313;
+    text-align: center;
+}
+.section2 p{
+    color: rgb(13, 13, 63);
+    font-size: 20px;
+    text-align: justify;
+}
+.final{
+    background-color: #fdc166;
+    display: flex;
+    padding: 100px; 
+    justify-content: space-between;  
+    margin-bottom: 0; 
+}
+
+.borde{
+    border-right: 2px solid;
+    width: 33.33%;
+    padding: 20px;
+    color: var(--marron2);
+}
+.borde h5{
+    text-align: center;
+    font-size: 40px;
+    
+}
+.borde p{
+    text-align: center;
+    width: 90%;        
+
+}
+.borderr{
+    border-right: none;
+}
+.borde1{
+    border-right: 2px solid;
+
+}
+.borde1 h5{
+    text-align: center;
+    font-size: 40px;
+}
+.borde1 p{
+    text-align: justify;
+}
+
+.borde2 h5{
+    text-align: center;
+    font-size: 40px;
+}
+.borde2 p{
+    text-align: justify;
+}
+
+
+/*FOOTER*/
+
+
+.banner__footer{
+    background-image: url(https://i.pinimg.com/originals/d3/6d/46/d36d462db827833805497d9ea78a1343.jpg);
+    width: 100%;
+    height: 350px;
+    background-size: cover  ;
+    background-position: center;
+    box-sizing: border-box;
+    position: relative;
+  }
+  .banner__content{
+    background-color: #00000071;
+    width: 100%;
+    height: 100%;
+    
+  }
+  .banner__content p{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 300px;
+    margin-top: 0;
+  }
+  .banner__footer img{
+    position: absolute;
+    width: 50px;
+    top: 50px;
+  }
+  .img_fb{
+    left: 600px;
+  }
+  .img_ig{
+    left: 750px;
+  }
+  .img_wsp{
+    left: 900px;
+  }
+  .banner__info{
+    display: flex;
+    position: absolute;
+    left: 220px;
+    top: 140px;
+    color: #fff;
+  }
+  .info{
+    font-size: 15px;
+    margin: 0 20px;
+    text-align: center;
+  }
+
