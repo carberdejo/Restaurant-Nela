@@ -172,7 +172,16 @@ body {
     border-radius: 20px;
 }
 
-.mis-pedidos, .reservas-mesa {
+.mis-pedidos {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    min-height: 300px;
+    max-height: 800px;
+    position: relative;
+}
+.reservas-mesa {
     margin-bottom: 20px;
     padding: 10px;
     border: 1px solid #e0e0e0;
@@ -198,6 +207,7 @@ body {
     padding: 10px;
     background-color: #f1f1f1;
     border-radius: 8px;
+    
 }
 .mesa-btns {
     margin: 10px 0;

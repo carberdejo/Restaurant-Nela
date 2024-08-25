@@ -29,12 +29,7 @@ body {
 
 /*globales*/
 
-.contenedor{
-    max-width: 125rem;
-    margin: 0 auto;
-    width: 95%;
-    
-}
+
 
 h1, h2,h3, p, a,span,button {
     font-family: var(--texto);
@@ -116,6 +111,9 @@ img {
 /*NUEVO*/
 
 /*Nuevo menu iconos*/
+.menu__contenedor{
+    width: 100%;
+}
 .conteiner{
     width: 90%;
     display: flex;
@@ -165,8 +163,9 @@ img {
     }
 
 .contenedor{
-    width: 100%;
+    width: 90%;
     display: flex;
+    margin: auto;
 }
 .contenedor__main{
     width: 80%;

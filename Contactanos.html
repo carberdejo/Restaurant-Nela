@@ -4,13 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurante</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arima&family=Mulish:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="CSS/normalize.css">
     <link rel="stylesheet" href="CSS/Contactanos.css">
@@ -21,9 +14,10 @@
         <span class="material-symbols-outlined k3">
             menu
             </span>
-        <div class="logo">
-            <img src="IMAGENES/logo.png" >
-        </div>
+            <div class="logo">
+                <a href="Restaurante.html">
+                <img  src="IMAGENES/logo.png" alt="."></a>
+            </div>
         <nav class="navegacion">
             <a href="Nosotros.html">Nosotros</a>
             <a href="Carta.html">Carta</a>
@@ -59,7 +53,7 @@
                     <img src="IMAGENES/icon-3.png" alt="">
                     <h4>Es hora de empezar a cambiar,¡UNETE! a la familia nela. ¿Que estas esperando?</h4>
                 </div>
-                <a class="caja0__button" href="#">Visitar</a>
+                <a class="caja0__button" onclick="divya()" href="#">Visitar</a>
                 
             </div>
         </div>
@@ -143,48 +137,52 @@
             <p class="text__viñeta">Para encontar nuestro local solo tienes que dar click en el mapa de google maps.Si haci no puedes fuentes te perdiste la mejor saazon.</p>
         </div>
     </section>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="cards-container" id="cardsContainer">
+                <!-- Aquí se generarán las tarjetas dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="banner__footer">
+            <div class="banner__content">
+                <p>Todos los derechos reservados &copy; 2024</p>
+            </div>
+            <img class="img_fb" src="IMAGENES/fb.png" alt="fb">
+            <img class="img_ig" src="IMAGENES/ig.png" alt="">
+            <img class="img_wsp"  src="IMAGENES/wsp.png" alt="">
+            
+            <div class="banner__info">
+    
+                <div class="info">
+                    <h3>Dirección</h3>
+                    <p>San Juan de Lurigancho 15419</p>
+                </div>
+    
+                <div class="info">
+                    <h3>Días especiales</h3>
+                    <p>Sabados y Jueves 7am - 11pm</p>
+                    <p>+51 999999999</p>
+                </div>
+    
+                <div class="info">
+                    <h3>Horarios</h3>
+                    <p>Lunes - Domingo 7am - 11pm</p>
+                </div>
+    
+                <div class="info">
+                    <h3>Noticias</h3>
+                    <p>suscribete para recibir más noticias</p>
+                </div>
+            </div>
+        </div>  
+    </footer>
+
+    <script src="js/contactenos.js"></script>
 </body>
-
-
-
-<footer>
-    <div class="banner__footer">
-        <div class="banner__content">
-            <p>Todos los derechos reservados &copy; 2024</p>
-        </div>
-        <img class="img_fb" src="IMAGENES/fb.png" alt="fb">
-        <img class="img_ig" src="IMAGENES/ig.png" alt="">
-        <img class="img_wsp"  src="IMAGENES/wsp.png" alt="">
-        
-        <div class="banner__info">
-
-            <div class="info">
-                <h3>Dirección</h3>
-                <p>San Juan de Lurigancho 15419</p>
-            </div>
-
-            <div class="info">
-                <h3>Días especiales</h3>
-                <p>Sabados y Jueves 7am - 11pm</p>
-                <p>+51 999999999</p>
-            </div>
-
-            <div class="info">
-                <h3>Horarios</h3>
-                <p>Lunes - Domingo 7am - 11pm</p>
-            </div>
-
-            <div class="info">
-                <h3>Noticias</h3>
-                <p>suscribete para recibir más noticias</p>
-            </div>
-        </div>
-    </div>  
-</footer>
-
-
-
-
 
 
 
