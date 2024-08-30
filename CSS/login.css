@@ -1,0 +1,61 @@
+.fondo{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 1000;
+}
+.tablero{
+    width: 350px;
+    height: 400px;
+    background-color: rgb(234, 238, 233);
+    z-index: 1000;
+    position: fixed;
+    top: 20%;
+    left: 40%;
+    padding: 30px;
+    border-radius: 25px;
+}
+.grupo{
+    margin-bottom: 15px;
+}
+.grupo label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.grupo input{
+    width: 100%;
+    padding: 8px 10px;
+    border: none;
+    border-bottom:2px solid var(--cafe) ;
+    background-color: transparent;
+}
+#recordarme{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+#recordarme input{
+    margin-right: 20px;
+}
+#login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #2d89ef;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#signup-link {
+    text-align: center;
+    margin-top: 15px;
+}
+#signup-link a{
+    color: #2d89ef;
+    text-decoration: none;
+}
+#signup-link a:hover {
+    text-decoration: underline;
+}

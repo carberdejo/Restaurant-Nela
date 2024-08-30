@@ -207,7 +207,10 @@ body {
     padding: 10px;
     background-color: #f1f1f1;
     border-radius: 8px;
-    
+    position: absolute;
+    right: 0;
+
+    bottom: 0;
 }
 .mesa-btns {
     margin: 10px 0;
@@ -315,3 +318,25 @@ h2{
     color: #fff !important;
 }
 
+.tarjeta-compra{
+    width: 40%;
+    height: 150px;
+    display: flex;
+    background-color: #f3f1f1;
+    border-radius: 15px;
+}
+.tarjeta-compra img{
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+.text-tarjeta{
+    width: 50%;
+    padding: 10px;
+}
+.text-tarjeta h3{
+    font-size: 22px;
+}
+.text-tarjeta p{
+    font-size: 22px;
+}

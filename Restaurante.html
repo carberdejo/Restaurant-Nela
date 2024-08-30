@@ -6,36 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Restaurante</title>
-    <script src="https://kit.fontawesome.com/3fa85e75d2.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arima&family=Mulish:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />    
     <link rel="stylesheet" href="CSS/normalize.css">
     <link rel="stylesheet" href="CSS/Restaurante.css">
     <link rel="stylesheet" href="CSS/fonts.css">
+    <link rel="stylesheet" href="CSS/login.css">
 </head>
 
 
 <body>
     <header class="encabezado">
-        <div class="contenedor-navegacion">
-            <div class="contenido-navegacion contenedor">
+        <div class="menu">
+            <span class="material-symbols-outlined k3">
+                menu
+                </span>
                 <div class="logo">
                     <a href="Restaurante.html">
                     <img  src="IMAGENES/logo.png" alt="."></a>
-
                 </div>
-                <nav class="navegacion">
-                    <a href="Nosotros.html">Nosotros</a>
-                    <a href="Carta.html">Carta</a>
-                    <a href="Promociones.html">Promociones</a>
-                    <a href="Contactanos.html">Contactanos</a>
-                    <a href="Reservas.html">Reservas</a>
-                </nav>
-            </div>
+            <nav class="navegacion">
+                <a href="Nosotros.html">Nosotros</a>
+                <a href="Carta.html">Carta</a>
+                <a href="Promociones.html">Promociones</a>
+                <a href="Contactanos.html">Contactanos</a>
+                <a href="Reservas.html">Reservas</a>
+            </nav>
+            <a class="login" onclick="login()"><span class="material-symbols-outlined persona">
+                person
+                </span></a>
         </div>
         <div class="contenido-header">
             <div class="contenedor-encabezado">
@@ -92,7 +90,7 @@
     </div>
 
     <div class="principal-carta">
-        <div onclick="bannerCarrusel()" class="img-carta ">
+        <div  class="img-carta ">
             <div class="carta__fondo">
                 <p class="prenc-carta">ARROZ CON POLLO</p>
                 <p class="tex-carta">Nuestro arroz con pollo es una mezcla perfecta de arr oz esponjoso y pollo jugoso,
@@ -108,7 +106,7 @@
             </div>
         </div>
 
-        <div class="img-carta icarta_3">
+        <div class="img-carta icarta_3" onclick="banrrusel()">
             <div class="carta__fondo">
                 <p class="prenc-carta">CHICARRON DE POLLO</p>
                 <p class="tex-carta">Nuestro arroz con pollo es una mezcla perfecta de arr oz esponjoso y pollo jugoso,
@@ -118,7 +116,7 @@
     </div>
 
     <div>
-        <a href="Carta.html" class="btn__carta">Nuestra Carta</a>
+        <a   class="btn__carta">Nuestra Carta</a>
     </div>
 </div>
 
@@ -155,6 +153,12 @@
     </div>
 
 </section>
+<div class="marco">
+    <button class="btn_cerrar" onclick="closeLogin()">x</button>
+    <div class="cuadro">
+        <img id="imgcab" src="IMAGENES/desc1.png" />
+    </div>
+</div>
 <footer>
     <div class="banner__footer">
         <div class="banner__content">
@@ -189,7 +193,8 @@
         </div>
     </div>  
 </footer>
-<script src="js/restaurante.js"></script>
+<script src="js/restaurant.js"></script>
+<script src="js/login.js"></script>
 </body>
 
 
