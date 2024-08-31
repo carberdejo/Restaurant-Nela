@@ -117,6 +117,7 @@
   }
   .persona{
     font-size: 40px;
+    cursor: pointer;
   }
   .navegacion a{
     color: var(--blanco);
@@ -138,7 +139,39 @@
   .navegaciona:first-of-type {
     margin-top: 5rem;
   }
+    /* Estilos para el reloj */
+#reloj {
+  color: var(--blanco);
+  font-size: 3rem;
+  margin-top: 10px;
+}
+
+@font-face {
+  font-family: 'DS-Digital';
+  src: url('/ds_digital/DS-DIGI.TTF') format('truetype');
+}
+
+
+/* Estilos para el reloj digital */
+#reloj {
+  color: #32CD32; /* Verde similar al de la imagen */
+  font-size: 4rem; /* Ajusta según el tamaño deseado */
+  font-family: 'DS-Digital', 'Courier New', Courier, monospace;
   
+  padding: 20px 40px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  display: inline-block;
+  margin-top: 20px; /* Espaciado superior */
+  letter-spacing: 5px; /* Espaciado entre dígitos para simular segmentos */
+  text-shadow: 0 0 10px #32CD32; /* Brillo alrededor del texto */
+}
+
+@media (min-width: 768px) {
+  #reloj {
+      font-size: 6rem; /* Ajuste de tamaño para pantallas más grandes */
+  }
+}
+
   /*video prin*/
   .contenido-header {
     position: relative;

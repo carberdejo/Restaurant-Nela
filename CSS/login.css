@@ -59,3 +59,12 @@
 #signup-link a:hover {
     text-decoration: underline;
 }
+#close-login-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}

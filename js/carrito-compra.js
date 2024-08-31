@@ -1,6 +1,9 @@
+
+
 const contentCarrito = document.querySelector('.mis-pedidos');
 
-const cardId = parseInt(localStorage.getItem('selectedCardId'), 10);
+const selectedCardIds = JSON.parse(localStorage.getItem('selectedCardIds')) || [];
+
 const infoTarget2 = [
     { id: 0, imagen: 'IMAGENES/pla5.jpg', video: 'IMAGENES/vi1.mp4', titul: 'Seca de Carne', precio: 'S/.20' },
     { id: 1, imagen: 'IMAGENES/pla1.jpg', titul: 'Arroz Chaufa', precio: 'S/.20' },
@@ -12,10 +15,12 @@ const infoTarget2 = [
     { id: 7, imagen: 'IMAGENES/pla8.jpg', titul: 'Seca de Carne', precio: 'S/.20' },
     { id: 8, imagen: 'IMAGENES/pla4.jpg', titul: 'Seca de Carne', precio: 'S/.20' }
 ];
-const card = infoTarget2[cardId];
+selectedCardIds.forEach(cardId => {
 
 if (!isNaN(cardId) && cardId >= 0 && cardId < infoTarget2.length) {
+    
     const card = infoTarget2[cardId];
+
     console.log("card:", card);
     const target = document.createElement('div')
     target.classList.add('tarjeta-compra')
@@ -25,4 +30,10 @@ if (!isNaN(cardId) && cardId >= 0 && cardId < infoTarget2.length) {
                         <p>${card.precio}</p>
                         </div>`
     contentCarrito.appendChild(target);
+}
+});
+
+function eliminardato() {
+    localStorage.removeItem('selectedCardIds');
+    contentCarrito.innerHTML = '';
 }

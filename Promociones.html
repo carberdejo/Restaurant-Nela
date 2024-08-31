@@ -4,17 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurante</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arima&family=Mulish:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/normalize.css">
     
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="CSS/Promociones.css">
     <link rel="stylesheet" href="CSS/fonts.css">
+    <link rel="stylesheet" href="js/underscore-min.js">
 </head>
 <body>
     <div class="menu">
@@ -47,54 +42,99 @@
 
 
     <h3 class="tituloEX">Combos</h3>
-    <div class="combos">
-        <div class="effect"> 
-			<div class="itemgroup">
-				<img class="Comboimg" src="imagenes/ComboP.jpg"  alt="">
-				<h3>Combos Parrilleros</h3>
-				<ul class="menu">
-                    <li>Asado</li>
-                    <li>Brochetas</li>
-                    <li>Entrada</li>
-                    <li>Bebida a elección</li>
-                    <li>Panceta de Cerdo</li>
-                </ul>
-				<a class="text2">s/110.00</a>
-			</div>
-        </div>
-        <div class="effect">
-			<div class="itemgroup">
-				<img class="Comboimg" src="imagenes/ComboF.jfif">
-				<h3>Combos       Familiares</h3>
-				<ul class="menu">
-                    <li>Bebida a elección</li>
-                    <li>Sopa</li>
-                    <li>Pollo al Horno</li>
-                    <li>Papas sancochadas</li>
-                    <li>Arroz(opcional)</li>
-                    </ul>
-				<a class="text2">s/77.00</a>
-			</div>
-        </div>
-        <div class="effect">
+    <section class="combos">
+        <span id="left" class="material-symbols-outlined flecha1">chevron_left</span>
+        <span id="right" class="material-symbols-outlined flecha2">chevron_right</span>
+       <div class="cartas">
             <div class="itemgroup">
-            <img class="Comboimg comboimg2" src="imagenes/ComboDP.jfif">
-            <h3>Combos de     Pastas</h3>
-            <ul class="menu">
-                <li>Bebida a elección</li>
-                <li>Pasta 4 estaciones</li>
-                <li>Lasagna</li>
-                <li>Pan al ajo</li>
-                <li>Ravioli</li>
-                </ul>
-            <a class="text2">s/67.50</a>
-        </div>
-    </div>
-</div>
+                <img class="Comboimg" src="imagenes/ComboP.jpg"   draggable="false">
+                <div class="cajatext">
+                    <h3>Combos Parrilleros</h3>
+                    <ul class="menu-text">
+                        <li>Asado</li>
+                        <li>Brochetas</li>
+                        <li>Entrada</li>
+                        <li>Bebida a elección</li>
+                        <li>Panceta de Cerdo</li>
+                    </ul>
+                    <a class="text2">s/110.00</a>
+                </div>
+            </div>
+        
+        
+		    <div class="itemgroup">
+                <img class="Comboimg" src="imagenes/ComboF.jfif"  draggable="false">
+                <div class="cajatext">
+                    <h3>Combos Familiares</h3>
+                    <ul class="menu-text">
+                        <li>Bebida a elección</li>
+                        <li>Sopa</li>
+                        <li>Pollo al Horno</li>
+                        <li>Papas sancochadas</li>
+                        <li>Arroz(opcional)</li>
+                    </ul>
+                    <a class="text2">s/77.00</a>
+		        </div>
+            </div>
+                
 
-    <br>
-<br>
-<br>
+
+            <div class="itemgroup">
+                <img class="Comboimg comboimg2" src="imagenes/ComboDP.jfif" draggable="false">
+                <div class="cajatext">
+                    <h3>Combos de     Pastas</h3>
+                    <ul class="menu-text">
+                        <li>Bebida a elección</li>
+                        <li>Pasta 4 estaciones</li>
+                        <li>Lasagna</li>
+                        <li>Pan al ajo</li>
+                        <li>Ravioli</li>
+                    </ul>
+                    <a class="text2">s/67.50</a>
+                </div>
+            </div>
+
+            <div class="itemgroup">
+                <img class="Comboimg comboimg2" src="imagenes/ComboDP.jfif"  draggable="false">
+                <div class="cajatext">
+                    <h3>Combos de     Pastas</h3>
+                    <ul class="menu-text">
+                        <li>Bebida a elección</li>
+                        <li>Pasta 4 estaciones</li>
+                        <li>Lasagna</li>
+                        <li>Pan al ajo</li>
+                        <li>Ravioli</li>
+                    </ul>
+                    <a class="text2">s/67.50</a>
+                </div>
+            </div>
+
+            <div class="itemgroup">
+                <img class="Comboimg comboimg2" src="imagenes/ComboDP.jfif" draggable="false">
+                <div class="cajatext">
+                    <h3>Combos de     Pastas</h3>
+                    <ul class="menu-text">
+                        <li>Bebida a elección</li>
+                        <li>Pasta 4 estaciones</li>
+                        <li>Lasagna</li>
+
+                    </ul>
+                    <a class="text2">s/67.50</a>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="content-aleatorio">
+        <h2>Hora de jugar</h2>
+        <h3>Acierta 3 y llevate el plato gratis</h3>
+        <div class="box-button">
+            <button class="btn-nuevo btn">NUEVO</button>
+            <button class="btn-pedir btn">ELIGE</button>
+        </div>
+        <div class="imagenes"></div>
+    </section>
     <footer>
         <div class="banner__footer">
             <div class="banner__content">
@@ -131,7 +171,7 @@
     </footer>
 
 
-    <script src="js/promociones.js"></script>
+    <script src="js/promociones.js" defer></script>
 
 </body>
 </html>

@@ -39,7 +39,8 @@ function cartas() {
 cartas();
 
 function logger(i) {
-    console.log('Logeando:', i)
-    localStorage.setItem('selectedCardId', i);
-    window.location.href = '../Reservas.html';
+    let selectedCardIds = JSON.parse(localStorage.getItem('selectedCardIds')) || [];
+    selectedCardIds.push(i);
+    localStorage.setItem('selectedCardIds', JSON.stringify(selectedCardIds));
+    //window.location.href = '../Reservas.html';
 }

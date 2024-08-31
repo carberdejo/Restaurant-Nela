@@ -2,7 +2,11 @@ function login() {
     //const fondo = document.createElement('div');
     const tablero = document.createElement('div');
     tablero.classList.add('tablero')
-    //fondo.classList.add('fondo')
+
+    const closeButton = document.createElement('button');
+    closeButton.id = 'close-login-btn';
+    closeButton.innerHTML = '&times;'; // Símbolo de cerrar
+    closeButton.addEventListener('click', closeLogin);
 
     document.body.appendChild(tablero)
     tablero.innerHTML = `<h2>Bienvenido</h2>
@@ -24,7 +28,41 @@ function login() {
         <div id="signup-link">
             <p>¿No tienes una cuenta? <a href="#">Regístrate</a></p>
         </div>`
-        function finlogin() {
+    
+    // Añadir el botón de cerrar al contenedor
+    tablero.appendChild(closeButton);
+    
+    function closeLogin() {
+            
             tablero.remove();
+    }
+    const form = document.getElementById('loginForm');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Obtener valores de los campos
+        const nameInput = document.getElementById('name');
+        const passwordInput = document.getElementById('password');
+        
+        // Validar campos vacíos
+        if (nameInput.value.trim() === '') {
+            alert('Por favor, ingrese su nombre.');
+            return;
         }
+        
+        if (passwordInput.value.trim() === '') {
+            alert('Por favor, ingrese su contraseña.');
+            return;
+        }
+
+        // Validar la longitud mínima de la contraseña (ej. mínimo 6 caracteres)
+        if (passwordInput.value.length < 6) {
+            alert('La contraseña debe tener al menos 6 caracteres.');
+            return;
+        }
+
+        // Validación exitosa
+        alert('Inicio de sesión exitoso!');
+        closeLogin();
+    });
 }
