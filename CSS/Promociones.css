@@ -369,3 +369,9 @@ margin: 0px;
   margin: 0 20px;
   text-align: center;
 }
+.burger{
+  width: 130px;
+  height: auto;
+  position: absolute;
+  left: 50%x;
+}

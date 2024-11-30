@@ -121,7 +121,7 @@ btn_pedir.addEventListener('click', () => {
         console.log(numeroAleatorio);
         
         const imgCarta = document.createElement('img');
-        imgCarta.src = `../IMAGENES/${numeroAleatorio}.jpg`;
+        imgCarta.src = `IMAGENES/${numeroAleatorio}.jpg`;
         imgCarta.classList.add('carta');
         contenImage.append(imgCarta);
 

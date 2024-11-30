@@ -1,6 +1,6 @@
 
 
-const contentCarrito = document.querySelector('.mis-pedidos');
+const contentCarrito = document.querySelector('.platos');
 
 const selectedCardIds = JSON.parse(localStorage.getItem('selectedCardIds')) || [];
 

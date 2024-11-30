@@ -180,6 +180,11 @@ body {
     min-height: 300px;
     max-height: 800px;
     position: relative;
+    
+}
+.platos{
+    width: 100%;
+    height: 100%;
 }
 .reservas-mesa {
     margin-bottom: 20px;
@@ -324,6 +329,7 @@ h2{
     display: flex;
     background-color: #f3f1f1;
     border-radius: 15px;
+    margin: 10px 0 10px 0;
 }
 .tarjeta-compra img{
     width: 50%;
