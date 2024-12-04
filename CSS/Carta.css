@@ -299,7 +299,7 @@ img {
     list-style: none;
     padding: 0;
 }
-.menu__sidebar li a{
+.menu__sidebar a{
     display: block;
     font-size: 20px;
     color: #fff;
@@ -312,7 +312,7 @@ img {
 .sidebar:hover{
     border: 1px solid var(--marron2);
 }
-.menu__sidebar li:hover{
+.menu__sidebar a:hover{
     
     background-color: #0000000e;
     border-radius: 25px;
