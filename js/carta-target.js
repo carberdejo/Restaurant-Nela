@@ -1,6 +1,6 @@
 
 class Target{
-    idcount = 0;
+    static idcount = 1;
     /**
      * 
      * @param {String} imagen 
@@ -9,7 +9,7 @@ class Target{
      * @param {} precio 
      */
     constructor( imagen, video, titulo, precio,filtro = Filtros.Todos,categoria) {
-        this.id = this.idcount++;
+        this.id = Target.idcount++;
         this.imagen = imagen;
         this.video = video;
         this.titulo = titulo;
@@ -18,6 +18,8 @@ class Target{
         this.categoria = categoria;
     }
 }
+
+//Objetos
 const Categoria = {
     Pollo: 'Pollo',
     Carnes: 'Carnes',
@@ -31,6 +33,14 @@ const Filtros = {
     Baratos: 'Baratos',
     Mejores:'Mejores',
 }
+
+const ElementsHTML = {
+    ButonFilter: '#Filtro',
+    ButonCategoria: '.icon_img',
+    IconAgregar:'.button',
+};
+
+
 const {Carnes,Pastas,Pollo,Pescado,Tragos} = Categoria;
 const menu = {
     todos: [
@@ -66,7 +76,7 @@ const setFiltros = ( newfilter = Filtros.Todos ) => {
 //Use-Cases
 const createTarget = ( plato ) => {
     if (!plato) throw new Error('Se requiere el plato');
-    const html = `  <div class="lista__item">
+    const html = `  <div class="lista__item" >
                         <a href="Chaufa.html"><img src=${plato.imagen} alt=""></a> 
                         <a href="Chaufa.html"><video autoplay muted loop src=${plato.video} loop></video></a> 
                         <div class="fondo__item"></div>
@@ -79,6 +89,7 @@ const createTarget = ( plato ) => {
     const divElement = document.createElement('div');
     divElement.innerHTML = html;
     divElement.classList.add('lista')
+    divElement.setAttribute('id',plato.id)
     return divElement;
 }
 
@@ -95,13 +106,17 @@ const displayMenu = () => {
     const Menus = getMenusFiltros(getFiltros());
     renderTarget('.contenedor__lista', Menus);
 }
-const ElementsHTML = {
-    ButonFilter: '#Filtro',
-};
+const obtenerPlato = ( id ) => {
+    element = menu.todos.find(plato => plato.id == id)
+    return element;
+}
     
 (() => {
     displayMenu();
+
     const ButonFiltersMenu = document.querySelectorAll(ElementsHTML.ButonFilter);
+    const ButonAgregar = document.querySelectorAll(ElementsHTML.IconAgregar);
+
     ButonFiltersMenu.forEach(menus => {
         menus.addEventListener('click', (event) => {
             console.log(event.target.text);
@@ -120,6 +135,18 @@ const ElementsHTML = {
                     break;
             }
             displayMenu();
+        })
+    })
+
+    ButonAgregar.forEach( element => {
+        element.addEventListener('click', (event) => {
+            let GroupTarget = JSON.parse(localStorage.getItem('target')) || [];
+        
+            const element = event.target.closest('[id]')
+            const plato = obtenerPlato(element.id);
+            GroupTarget.push(plato);
+            console.log(GroupTarget);
+            localStorage.setItem('target',JSON.stringify(GroupTarget))
         })
     })
 })();
