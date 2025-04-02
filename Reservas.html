@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="CSS/normalize.css">
     <link rel="stylesheet" href="CSS/Reservas.css">
+    <link rel="stylesheet" href="CSS/Carta.css">
 </head>
 <body>
     <div class="menu">
@@ -37,9 +38,9 @@
                 
             </div>
             <div class="total">
-                <p>Total a Pagar: S/.40</p>
+                <p >Total a Pagar: S/.<span id="totalPrecio">0</span></p>
             </div>
-            <button onclick="eliminardato()" >eliminar</button>
+            <button id="buttonDelete" onclick="eliminardato()" >eliminar</button>
         </div>
         <div class="reservas-mesa">
             <h3>Reservas de Mesa</h3>
@@ -99,5 +100,6 @@
     </footer>
     <script src="js/carrito-compra.js"></script>
     <script src="js/reservas.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>

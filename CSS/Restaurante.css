@@ -87,16 +87,16 @@
   .menu{
     height: 130px;
     display: flex;
-    width: 100%;
-    box-sizing: border-box;
+    flex-wrap: wrap;
+    /*width: 100%;*/
     justify-content: space-between;
     background-color: var(--cafe);
     align-items: center;
+    padding: 0 2rem;
   }
   .k3{
-    margin-left: 15px;
-    color: #fff;
-    font-size: 50px;
+    margin-left: 4rem;
+    color: var(--blanco);
   }
   .logo{
     height: 80% ;
@@ -104,7 +104,7 @@
   }
   .logo img{
     height: 100%  ;
-    width: auto;
+    
   }
   .login{
     width: 70px;
@@ -142,35 +142,12 @@
     /* Estilos para el reloj */
 #reloj {
   color: var(--blanco);
-  font-size: 3rem;
-  margin-top: 10px;
+  font-size: 6rem;
+  margin-top: 1rem;
+  font-family: 'DS-Digital', monospace;
+  text-shadow: 0 0 10px #cfa724;
 }
 
-@font-face {
-  font-family: 'DS-Digital';
-  src: url('/ds_digital/DS-DIGI.TTF') format('truetype');
-}
-
-
-/* Estilos para el reloj digital */
-#reloj {
-  color: #32CD32; /* Verde similar al de la imagen */
-  font-size: 4rem; /* Ajusta según el tamaño deseado */
-  font-family: 'DS-Digital', 'Courier New', Courier, monospace;
-  
-  padding: 20px 40px; /* Espaciado interno */
-  border-radius: 10px; /* Bordes redondeados */
-  display: inline-block;
-  margin-top: 20px; /* Espaciado superior */
-  letter-spacing: 5px; /* Espaciado entre dígitos para simular segmentos */
-  text-shadow: 0 0 10px #32CD32; /* Brillo alrededor del texto */
-}
-
-@media (min-width: 768px) {
-  #reloj {
-      font-size: 6rem; /* Ajuste de tamaño para pantallas más grandes */
-  }
-}
 
   /*video prin*/
   .contenido-header {
@@ -215,9 +192,7 @@
   }
   
   /*sobre nosotros*/
-  .contenedor-nosotros {
-    padding-top: 5rem;
-  }
+  
   
   @media (min-width: 768px) {
     .contenedor-nosotros {
@@ -315,24 +290,32 @@ width: 48%;
       text-align: center;
     }
   }
-  
+  @media (min-width: 790px){
   .principal-carta {
     display: flex;
     
     width: 100%;
     justify-content: center;
+    
   }
-  
+}
   .img-carta {
     background-image: url(../IMAGENES/arrozconpollo.png);
     background-size: cover;
     flex: 0 0 calc(35% - 1rem);
     padding: 1.5rem;
     border-radius: 5px;
-    height: 300px;
-    width: 250px;
+    width: calc(100% - 2rem);
+    height: calc(300px - 1rem);
+    min-width: 350px;
+    min-height: 250px;
+    max-width: 470px;
+    max-height: 400px;
+    
+    background-color: lightcoral;
     margin: 0 10px;
     position: relative;
+    
   }
   
   .icarta_2{
@@ -344,7 +327,7 @@ width: 48%;
   .carta__fondo{
     width: 90%;
     height: 150px;
-    background-color: #823607cc;
+    background-color:var(--cafe);
     position: absolute;
     bottom: -30px;
     border-radius: 20px;
@@ -523,3 +506,4 @@ width: 48%;
   z-index: 10000;
   background-color: #fff;
 }
+

@@ -8,7 +8,7 @@ class Target{
      * @param {String} titulo 
      * @param {} precio 
      */
-    constructor( imagen, video, titulo, precio,filtro = Filtros.Todos,categoria) {
+    constructor( imagen, video, titulo, precio,filtro = Todos,categoria = Pollo) {
         this.id = Target.idcount++;
         this.imagen = imagen;
         this.video = video;
@@ -37,40 +37,75 @@ const Filtros = {
 const ElementsHTML = {
     ButonFilter: '#Filtro',
     ButonCategoria: '.icon_img',
-    IconAgregar:'.button',
+    IconAgregar: '.button',
+    IConCategoria:'.box_icon',
 };
 
 
-const {Carnes,Pastas,Pollo,Pescado,Tragos} = Categoria;
+const { Carnes, Pastas, Pollo, Pescado, Tragos } = Categoria;
+const {Todos,Tendencia,Baratos,Mejores } = Filtros;
 const menu = {
     todos: [
-        new Target('IMAGENES/pla1.jpg', 'IMAGENES/vi1.mp4', 'Seca de Carne', 'S/.20',Filtros.Mejores,Carnes),
-        new Target('IMAGENES/pla2.jpg','IMAGENES/huancaina.mp4', 'Arroz Chaufa', 'S/.25',Filtros.Tendencia,Carnes),
-        new Target('IMAGENES/pla3.jpg', 'IMAGENES/vi1.mp4', 'Tallarin', 'S/.30'),
-        new Target('IMAGENES/pla4.jpg', 'IMAGENES/huancaina.mp4', 'Tallarin Saltado', 'S/.35'),
+        new Target('IMAGENES/pla1.jpg', 'IMAGENES/vi1.mp4', 'Seca de Carne', 20,Mejores,Carnes),
+        new Target('IMAGENES/pla2.jpg','IMAGENES/huancaina.mp4', 'Arroz Chaufa', 25,Tendencia,Carnes),
+        new Target('IMAGENES/pla3.jpg', 'IMAGENES/vi1.mp4', 'Tallarin', 30,Baratos,Pollo),
+        new Target('IMAGENES/pla4.jpg', 'IMAGENES/huancaina.mp4', 'Tallarin Saltado',35, Tendencia, Pastas),
+        new Target('IMAGENES/pla5.jpg', 'IMAGENES/vi1.mp4', 'Tallarin', 30, Baratos, Pollo),
+        new Target('IMAGENES/pla6.jpg', 'IMAGENES/vi1.mp4', 'Papa a la huancaina',30, Baratos, Pollo),
+        new Target('IMAGENES/Ceviche.jpg', 'IMAGENES/Ceviche.mp4', 'Ceviche', 30, Tendencia, Pescado),
+        new Target('IMAGENES/pla8.jpg', 'IMAGENES/vi1.mp4', 'Tallarin', 20, Baratos, Carnes),
+        new Target('IMAGENES/Pescado-salca-picante.jpg', 'IMAGENES/Pescado-salca-picante.mp4', 'Pescado a salsa picante', 30, Baratos, Pescado),
+        new Target('IMAGENES/EstofadoPescado.jpg', 'IMAGENES/EstofadoPescado.mp4', 'Estofado de Pescado',30, Baratos, Pescado),
+        new Target('IMAGENES/pla1.jpg', 'IMAGENES/vi1.mp4', 'Tallarin', 30, Baratos, Pollo),
+        new Target('IMAGENES/Coctel.jpg', 'IMAGENES/Coctel.mp4', 'Coctel', 30, Tendencia, Tragos),
+        new Target('IMAGENES/Vino.jpg', 'IMAGENES/Vino.mp4', 'Vino', 30, Baratos, Tragos),
+        new Target('IMAGENES/Whiskey.jpg', 'IMAGENES/Whiskey.mp4', 'Whiskey', 30,Mejores,Tragos),
     ],
-    filtro: Filtros.Todos
+    filtro: Filtros.Todos,
+    categor: Pollo
 
 }
 //Stores
+const getCategoria = () => {
+    return menu.categor;
+}
 const getFiltros = () => {
     return menu.filtro;
 }
-const getMenusFiltros = ( filter = Filtros.Todos ) => {
+const getMenusFiltros = ( filter = Todos ) => {
     switch (filter) {
-        case Filtros.Todos:
-            return [...menu.todos];
+        case Todos:
+            return menu.todos.filter(plato => plato.categoria === menu.categor);
         case Filtros.Baratos:
-            return menu.todos.filter(plato => plato.filtro === Filtros.Baratos);
+            return menu.todos.filter(plato => plato.filtro === Baratos && plato.categoria === menu.categor);
         case Filtros.Mejores:
-            return menu.todos.filter(plato => plato.filtro === Filtros.Mejores);
+            return menu.todos.filter(plato => plato.filtro === Mejores && plato.categoria === menu.categor);
         case Filtros.Tendencia:
-            return menu.todos.filter(plato => plato.filtro === Filtros.Tendencia);
+            return menu.todos.filter(plato => plato.filtro === Tendencia && plato.categoria === menu.categor);
     }
 }
 
 const setFiltros = ( newfilter = Filtros.Todos ) => {
     menu.filtro = newfilter;
+}
+
+const setCategorias = ( newcategoria = Pollo ) => {
+    menu.categor = newcategoria;
+}
+
+const getMenuCategoria = ( categ = Pollo ) => {
+    switch (categ) {
+        case Pollo:
+            return menu.todos.filter(plato => plato.categoria === Pollo);
+        case Carnes:
+            return menu.todos.filter(plato => plato.categoria === Carnes);
+        case Pescado:
+            return menu.todos.filter(plato => plato.categoria === Pescado);
+        case Pastas:
+            return menu.todos.filter(plato => plato.categoria === Pastas);
+        case Tragos:
+            return menu.todos.filter(plato => plato.categoria === Tragos);
+    }
 }
 
 //Use-Cases
@@ -82,7 +117,7 @@ const createTarget = ( plato ) => {
                         <div class="fondo__item"></div>
                         <div class="item__text">
                             <h3>${plato.titulo}</h3>
-                            <p>Precio: <span>${plato.precio}</span></p>
+                            <p>Precio: <span>S/.${plato.precio}</span></p>
                         </div>
                         <div class="button"><span class="material-symbols-outlined">add</span></div>
                     </div>`;
@@ -102,21 +137,31 @@ const renderTarget = (elementID, menu = []) => {
     })
 }
 
-const displayMenu = () => {
+const displayFiltroMenu = () => {
     const Menus = getMenusFiltros(getFiltros());
     renderTarget('.contenedor__lista', Menus);
 }
+
+const displayCategoria = () => {
+    const Menus = getMenuCategoria(getCategoria());
+    console.log(Menus);
+    renderTarget('.contenedor__lista', Menus);
+}
+
 const obtenerPlato = ( id ) => {
     element = menu.todos.find(plato => plato.id == id)
     return element;
 }
     
 (() => {
-    displayMenu();
+    displayFiltroMenu();
 
+    //DOM
     const ButonFiltersMenu = document.querySelectorAll(ElementsHTML.ButonFilter);
     const ButonAgregar = document.querySelectorAll(ElementsHTML.IconAgregar);
+    const ButonCategoriaMenu = document.querySelectorAll(ElementsHTML.ButonCategoria);
 
+    //LISTENERS
     ButonFiltersMenu.forEach(menus => {
         menus.addEventListener('click', (event) => {
             console.log(event.target.text);
@@ -134,7 +179,7 @@ const obtenerPlato = ( id ) => {
                     setFiltros(Filtros.Tendencia)
                     break;
             }
-            displayMenu();
+            displayFiltroMenu();
         })
     })
 
@@ -149,51 +194,25 @@ const obtenerPlato = ( id ) => {
             localStorage.setItem('target',JSON.stringify(GroupTarget))
         })
     })
-})();
 
-/*function cartas() {
-    const infoTarget = [
-        { id:0, imagen: 'IMAGENES/pla1.jpg',video:'IMAGENES/vi1.mp4', titul: 'Seca de Carne', precio: 'S/.20' },
-        { id:1, imagen: 'IMAGENES/pla2.jpg',video:'IMAGENES/vi1.mp4', titul: 'Arroz Chaufa', precio: 'S/.20' },
-        { id:2, imagen: 'IMAGENES/pla3.jpg',video:'IMAGENES/vi1.mp4', titul: 'Tallarin', precio: 'S/.20' },
-        { id:3, imagen: 'IMAGENES/pla4.jpg',video:'IMAGENES/vi1.mp4', titul: 'Tallarin Saltado', precio: 'S/.20' },
-        { id:4, imagen: 'IMAGENES/pla5.jpg', video: 'IMAGENES/vi1.mp4', titul: 'Seca de Carne', precio: 'S/.20' },
-        { id:5, imagen: 'IMAGENES/pla6.jpg', video: 'IMAGENES/huancaina.mp4', titul: 'Seca de Carne', precio: 'S/.20' },
-        { id:6, imagen: 'IMAGENES/pla8.jpg', video: 'IMAGENES/huancaina.mp4', titul: 'Seca de Carne', precio: 'S/.20' },
-        { id:7,imagen: 'IMAGENES/pla4.jpg', video: 'IMAGENES/vi1.mp4', titul: 'Seca de Carne', precio: 'S/.20' },
-        { id:8,imagen: 'IMAGENES/pla3.jpg', video: 'IMAGENES/vi1.mp4', titul: 'Seca de Carne', precio: 'S/.20' }
-    ]
-    contenedorLista = document.querySelector('.contenedor__lista')
-    infoTarget.forEach(cardta => {
-        const boxito = document.createElement('div');
-        const itemLista = document.createElement('div');
-        const sombra = document.createElement('div');
-        const text = document.createElement('div');
-
-        boxito.classList.add('lista')
-        itemLista.classList.add('lista__item');
-        sombra.classList.add('fondo__item')
-        text.classList.add('item__text')
-    
-        text.innerHTML = `<h3>${cardta.titul}</h3><p>${cardta.precio}</p>`
-        itemLista.innerHTML = `<img src="${cardta.imagen}"><video autoplay muted loop onClick="logger(${cardta.id})" src="${cardta.video}" loop></video><div class="button"><span class="material-symbols-outlined">add</span></div>`
-
-        itemLista.appendChild(sombra);
-        itemLista.appendChild(text);
-        boxito.appendChild(itemLista)
-        contenedorLista.appendChild(boxito);
-
-        itemLista.addEventListener('onclick', () => {
-            localStorage.setItem('selectedCardId', cardta.id);
-            window.location.href = '../Reservas.html';
+    ButonCategoriaMenu.forEach(element => {
+        element.addEventListener('click', (event) => {
+            const cate = event.target.closest('[id]').id;
+            switch (cate) {
+                case Pollo: setCategorias(Pollo)
+                    break;
+                case Carnes: setCategorias(Carnes)
+                    break;
+                case Pescado: setCategorias(Pescado)
+                    break;
+                case Pastas: setCategorias(Pastas)
+                    break;
+                case Tragos: setCategorias(Tragos)
+                    break;
+            }
+            displayCategoria();
+            console.log(menu.todos);
         })
     })
-}
-cartas();
 
-function logger(i) {
-    let selectedCardIds = JSON.parse(localStorage.getItem('selectedCardIds')) || [];
-    selectedCardIds.push(i);
-    localStorage.setItem('selectedCardIds', JSON.stringify(selectedCardIds));
-    //window.location.href = '../Reservas.html';
-}*/
+})();

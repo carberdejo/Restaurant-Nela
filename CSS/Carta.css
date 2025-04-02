@@ -149,6 +149,7 @@ img {
     border: none;
     background-color: transparent;
     margin-top: 10px;
+    cursor: pointer;
 }
 @media(min-width:768px){
     .texto-menu{
